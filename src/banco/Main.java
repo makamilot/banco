@@ -1,12 +1,11 @@
 package banco;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        ArrayList<Cliente> clientes = new ArrayList<>();
+        SistemaCliente sistema = new SistemaCliente();
 
 
         int opcao;
@@ -39,15 +38,14 @@ public class Main {
                      int idadeCliente = sc.nextInt();
                      sc.nextLine();
 
-                     clientes.add(new Cliente(nomeCliente, cpfCliente, emailCliente, idadeCliente));
+                     sistema.cadastrarCliente(cpfCliente, nomeCliente, emailCliente, idadeCliente);
                      break;
+                 case 3:
+
              }
         } while (opcao != 0);
         System.out.println("---------------");
         System.out.println("Lista de clientes: ");
-        for (Cliente c : clientes) {
-            System.out.println("---------------");
-            c.exibirCliente();
-        }
+        sistema.listarContas();
     }
 }

@@ -19,4 +19,22 @@ public class Cliente {
         System.out.println("EMAIL: " + email);
         System.out.println("IDADE: " + idade);
     }
+
+    public String getNome(){
+        return nome;
+    }
+    public String getCpf(){
+        return cpf;
+    }
+    public String getEmail(){
+        return email;
+    }
+    public int getIdade(){
+        return idade;
+    }
+
+    @Override
+    public String toString() {
+        return nome + " (CPF: " + cpf + ")";
+    }
 }
